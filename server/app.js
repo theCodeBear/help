@@ -6,31 +6,19 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var app = express();
 
-var User = require('./models/user');
-
+// running some basic Express middleware
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('client'));
 
+// links to the routes file which links to all the individual routes
+require('./routes')(app);
 
-app.get('/users', function(req, res) {
-  User.find({}, function(err, users) {
-    res.send({users: users});
-  });
-});
-
-app.post('/users', function(req, res) {
-  var user = new User(req.body);
-  user.save(function(err, dbUser) {
-    User.find({}, function(err, users) {
-      res.send({users: users});
-    });
-  })
-});
-
+// connect to mongo
 mongoose.connect('mongodb://localhost/expressApp');
 
+// run Express web server
 var server = app.listen(3000, function() {
   var port = server.address().port;
   console.log('Serving on port %s', port);
