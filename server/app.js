@@ -10,7 +10,7 @@ var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static('client'));
+app.use(express.static(__dirname + './../client'));
 
 // links to the routes file which links to all the individual routes
 require('./routes')(app);

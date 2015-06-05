@@ -4,7 +4,10 @@ angular.module('myApp')
 
 .controller('UserCtrl', function($scope, User) {
 
+  $scope.userIndex = [];
+
   User.getUserNames().then(function(userArray) {
+    console.log(userArray);
     $scope.userIndex = userArray;
   });
 
