@@ -13,7 +13,7 @@ angular.module('myApp')
   function getUserNames() {
     var deferred = $q.defer();
     get().then(function(data) {
-      deferred.resolve(mapUsers(data.data.users));
+      deferred.resolve(mapUsersToNames(data.data.users));
     });
     return deferred.promise;
   }
@@ -26,7 +26,7 @@ angular.module('myApp')
 
 // take array of user data from DB, map it to an array of only
 // the users' names and return this array
-  function mapUsers(users) {
+  function mapUsersToNames(users) {
     return users.map(function(user) {
       return user.name;
     });
@@ -37,7 +37,7 @@ angular.module('myApp')
     get: get,
     getUserNames: getUserNames,
     create: create,
-    mapUsers: mapUsers
+    mapUsersToNames: mapUsersToNames
   };
 
 });
