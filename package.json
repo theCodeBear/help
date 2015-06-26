@@ -1,13 +1,13 @@
 {
   "name": "expressFromScratch",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project skeleton for building MEAN Stack websites.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server/app.js"
   },
-  "author": "Todd Kronenberg <toddkronenberg.com>",
+  "author": "Todd Kronenberg <toddkronenberg@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.12.4",
