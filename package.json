@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server/app.js"
+    "dev": "nodemon server/app.js",
+    "prod": "gulp --type production && forever start server/app.js",
+    "clean": "rm -rf node_modules && rm -rf public && npm install && bower install && gulp build"
   },
   "author": "Todd Kronenberg <toddkronenberg@gmail.com>",
   "license": "ISC",
@@ -14,5 +16,16 @@
     "express": "^4.12.4",
     "mongoose": "^4.0.4",
     "morgan": "^1.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "^2.0.1"
   }
 }

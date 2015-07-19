@@ -1,0 +1,11 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "angular": false,
+    "require": false,
+    "module": false,
+    "console": false,
+    "document": false,
+    "__dirname": false
+  }
+}
