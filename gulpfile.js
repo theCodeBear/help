@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    copy = require('gulp-copy');
+    copy = require('gulp-copy'),
+    del = require('del');
 
 // default task to run watch task on gulp command
 gulp.task('default', ['watch']);
@@ -42,8 +43,13 @@ gulp.task('build-js', function() {
   //   .pipe(gulp.dest('./public/js'));
 });
 
+// delete all files in public folder
+gulp.task('clean:public', function(cb) {
+  del(['./public/**/*'], cb);
+});
+
 // copy client folder to public folder
-gulp.task('copy', function() {
+gulp.task('copy', ['clean:public'], function() {
   return gulp.src('./client/**/*')
     .pipe(copy('./public', {prefix: 1}));
 });
