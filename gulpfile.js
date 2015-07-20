@@ -45,7 +45,7 @@ gulp.task('build-js', function() {
 
 // delete all files in public folder
 gulp.task('clean:public', function(cb) {
-  del(['./public/**/*'], cb);
+  del(['./public/**/*', '!./public/vendor', '!./public/**/*'], cb);
 });
 
 // copy client folder to public folder
