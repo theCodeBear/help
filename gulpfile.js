@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 // default task to run watch task on gulp command
 gulp.task('default', ['watch']);
 // run build to just run gulp tasks without watching
-gulp.task('build', ['jshint', 'build-css', 'build-js']);
+gulp.task('build', ['jshint', 'build-css', 'build-js', 'copy']);
 
 // check for javscript errors in server and client
 gulp.task('jshint', function() {
