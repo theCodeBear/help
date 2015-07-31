@@ -14,25 +14,25 @@ angular.module('helpApp')
   })
 
   .state('app.teach.history', {
-    url: '/teach/history',
+    url: '/history',
     templateUrl: 'app/teach/history/history.html',
     controller: 'TeachHistoryCtrl'
   })
 
   .state('app.teach.openSessions', {
-    url: '/teach/openSessions',
+    url: '/openSessions',
     templateUrl: 'app/teach/openSessions/openSessions.html',
     controller: 'TeachOpenSessionsCtrl'
   })
 
   .state('app.teach.scheduleClass', {
-    url: '/teach/scheduleClass',
+    url: '/scheduleClass',
     templateUrl: 'app/teach/scheduleClass/scheduleClass.html',
     controller: 'TeachScheduleClassCtrl'
   })
 
   .state('app.teach.stats', {
-    url: '/teach/stats',
+    url: '/stats',
     templateUrl: 'app/teach/stats/stats.html',
     controller: 'TeachStatsCtrl'
   });

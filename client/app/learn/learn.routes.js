@@ -13,32 +13,32 @@ angular.module('helpApp')
     controller: 'LearnCtrl'
   })
 
-  .state('app.learn.historyt', {
-    url: '/learn/history',
+  .state('app.learn.history', {
+    url: '/history',
     templateUrl: 'app/learn/history/history.html',
     controller: 'LearnHistoryCtrl'
   })
 
   .state('app.learn.makeRequest', {
-    url: '/learn/makeRequest',
+    url: '/makeRequest',
     templateUrl: 'app/learn/makeRequest/makeRequest.html',
     controller: 'LearnMakeRequestCtrl'
   })
 
   .state('app.learn.openSessions', {
-    url: '/learn/openSessions',
+    url: '/openSessions',
     templateUrl: 'app/learn/openSessions/openSessions.html',
     controller: 'LearnOpenSessionsCtrl'
   })
 
   .state('app.learn.searchClasses', {
-    url: '/learn/searchClasses',
+    url: '/searchClasses',
     templateUrl: 'app/learn/searchClasses/searchClasses.html',
     controller: 'LearnSearchClassesCtrl'
   })
 
   .state('app.learn.unanswered', {
-    url: '/learn/unanswered',
+    url: '/unanswered',
     templateUrl: 'app/learn/unanswered/unanswered.html',
     controller: 'LearnUnansweredCtrl'
   });

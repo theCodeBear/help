@@ -2,7 +2,7 @@
 
 angular.module('helpApp')
 
-.controller('TeachStatsCtrl', function($scope) {
+.controller('TeachCtrl', function($scope) {
 
 
 
