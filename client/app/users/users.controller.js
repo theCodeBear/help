@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp')
+angular.module('helpApp')
 
 .controller('UserCtrl', function($scope, User) {
 

@@ -5,6 +5,8 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http)
 
 // running some basic Express middleware
 app.use(logger('dev'));
@@ -24,11 +26,11 @@ require('./config/routes')(app);
 
 
 // connect to mongo
-mongoose.connect('mongodb://localhost/expressApp');
+mongoose.connect('mongodb://localhost/help');
 
 // run Express web server
-var server = app.listen(3000, function() {
-  var port = server.address().port;
+http.listen(3000, function() {
+  var port = http.address().port;
   console.log('Serving on port %s', port);
 });
 
