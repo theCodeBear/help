@@ -1,0 +1,33 @@
+nav {
+  margin-top: 1em;
+}
+
+#navLogo {
+  margin-left: 0.5em;
+  display: inline-block;
+}
+
+.navIcons {
+  display: inline-block;
+  float: right;
+  .navIcon {
+    margin-right: 1em;
+  }
+}
+
+.navIcon {
+  &:hover {
+    color: purple;
+    cursor: pointer;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,18 @@
+<nav>
+  <!-- website icon placeholder -->
+  <i id='navLogo' class="navIcon fa fa-code fa-3x" ui-sref='app.landing'></i>
+  <div class='navIcons' >
+    <!-- notifications -->
+    <i class="navIcon fa fa-bell fa-3x" data-toggle='tooltip' data-placement='bottom' title='Notifications' ui-sref='app.notifications' ng-if='!isLoggedIn()'></i>
+    <!-- teach -->
+    <div class="navIcon" ui-sref='app.teach.history' ng-if='isLoggedIn()'>Teach</div>
+    <!-- learn -->
+    <span class="navIcon" ui-sref='app.learn.history' ng-if='isLoggedIn()'>Learn</span>
+    <!-- Side Menu -->
+    <i id='sidemenu' class="navIcon fa fa-cog fa-3x toggle-nav" data-toggle='tooltip' data-placement='bottom' title='Menu' ui-sref='app.account' ng-show='!isLoggedIn()'></i>
+    <!-- login -->
+    <!-- <i github-login class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ng-show='!isLoggedIn()'></i> -->
+  </div>
+</nav>
+
+<div ui-view></div>

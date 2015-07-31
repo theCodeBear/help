@@ -25,7 +25,7 @@ gulp.task('jshint', function() {
 gulp.task('build-css', function() {
   return gulp.src('./client/assets/styles/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/styles'));
 });
@@ -45,12 +45,12 @@ gulp.task('build-js', function() {
 
 // delete all files in public folder
 gulp.task('clean:public', function(cb) {
-  del(['./public/**/*', '!./public/vendor', '!./public/**/*'], cb);
+  del(['./public/**/*', '!./public/vendor', '!./public/vendor/**/*', '!./public/assets', '!./public/assets/styles', '!./public/assets/styles/**/*'], cb);
 });
 
 // copy client folder to public folder
 gulp.task('copy', ['clean:public'], function() {
-  return gulp.src('./client/**/*')
+  return gulp.src(['./client/**/*', '!./client/assets/styles/**/*'])
     .pipe(copy('./public', {prefix: 1}));
 });
 
@@ -59,5 +59,5 @@ gulp.task('watch', function() {
   gulp.watch(['./client/**/*.js'], ['build-js']);
   gulp.watch(['./client/**/*.js', './server/**/*.js'], ['jshint']);
   gulp.watch('./client/assets/styles/**/*.scss', ['build-css']);
-  gulp.watch('./client/**/*', ['copy']);
+  gulp.watch(['./client/**/*', '!./client/assets/styles/**/*'], ['copy']);
 });

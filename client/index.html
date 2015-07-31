@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Express App</title>
+  <title>Help</title>
   <link rel='stylesheet' href='vendor/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel='stylesheet', href='vendor/font-awesome/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='assets/styles/styles.css'>
   <script src='vendor/angular/angular.min.js'></script>
-  <link rel='stylsheet' href='styles.css'>
 </head>
 <body ng-app='helpApp'>
 
@@ -19,12 +20,11 @@
 
   <!-- Angular ui-router files -->
   <script src='index.js'></script>
-  <script src='app/landing/landing.js'></script>
-  <script src='app/users/users.js'></script>
   <script src='app/learn/learn.routes.js'></script>
   <script src='app/teach/teach.routes.js'></script>
 
   <!-- Controllers -->
+  <script src='app/nav/nav.controller.js'></script>
   <script src='app/landing/landing.controller.js'></script>
   <script src='app/users/users.controller.js'></script>
   <script src='app/account/account.controller.js'></script>
@@ -37,7 +37,7 @@
   <script src='app/learn/openSessions/openSessions.controller.js'></script>
   <script src='app/learn/searchClasses/searchClasses.controller.js'></script>
   <script src='app/learn/unanswered/unanswered.controller.js'></script>
-  <script src='app/notification/notification.controller.js'></script>
+  <script src='app/notifications/notifications.controller.js'></script>
   <script src='app/profile/profile.controller.js'></script>
   <script src='app/register/register.controller.js'></script>
   <script src='app/request/request.controller.js'></script>

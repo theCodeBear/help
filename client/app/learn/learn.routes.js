@@ -6,38 +6,38 @@ angular.module('helpApp')
 
   $stateProvider
 
-  .state('learn', {
+  .state('app.learn', {
     url: '/learn',
     templateUrl: 'app/learn/learn.html',
     abstract: true,
     controller: 'LearnCtrl'
   })
 
-  .state('learnHistoryt', {
+  .state('app.learn.historyt', {
     url: '/learn/history',
     templateUrl: 'app/learn/history/history.html',
     controller: 'LearnHistoryCtrl'
   })
 
-  .state('learnMakeRequest', {
+  .state('app.learn.makeRequest', {
     url: '/learn/makeRequest',
     templateUrl: 'app/learn/makeRequest/makeRequest.html',
     controller: 'LearnMakeRequestCtrl'
   })
 
-  .state('learnOpenSessions', {
+  .state('app.learn.openSessions', {
     url: '/learn/openSessions',
     templateUrl: 'app/learn/openSessions/openSessions.html',
     controller: 'LearnOpenSessionsCtrl'
   })
 
-  .state('learnSearchClasses', {
+  .state('app.learn.searchClasses', {
     url: '/learn/searchClasses',
     templateUrl: 'app/learn/searchClasses/searchClasses.html',
     controller: 'LearnSearchClassesCtrl'
   })
 
-  .state('learnUnanswered', {
+  .state('app.learn.unanswered', {
     url: '/learn/unanswered',
     templateUrl: 'app/learn/unanswered/unanswered.html',
     controller: 'LearnUnansweredCtrl'

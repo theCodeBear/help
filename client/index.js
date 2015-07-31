@@ -8,60 +8,77 @@ angular.module('helpApp', ['ui.router'])
 
   $stateProvider
 
-  .state('account', {
+  .state('app', {
+    abstract: true,
+    templateUrl: 'app/nav/nav.html',
+    controller: 'NavCtrl'
+  })
+
+  .state('app.landing', {
+    url: '/',
+    templateUrl: 'app/landing/landing.html'
+  })
+
+  .state('app.users', {
+    url: '/users',
+    templateUrl: 'app/users/users.html',
+    controller: 'UserCtrl'
+  })
+
+  .state('app.account', {
     url: '/account',
     templateUrl: 'app/account/account.html',
     controller: 'AccountCtrl'
   })
 
-  .state('chat', {
+  .state('app.chat', {
     url: '/chat',
     templateUrl: 'app/chat/chat.html',
     controller: 'ChatCtrl'
   })
 
-  .state('class', {
+  .state('app.class', {
     url: '/class',
     templateUrl: 'app/class/class.html',
     controller: 'ClassCtrl'
   })
 
-  .state('contact', {
+  .state('app.contact', {
     url: '/contact',
     templateUrl: 'app/contact/contact.html',
     controller: 'ContactCtrl'
   })
 
-  .state('faq', {
+  .state('app.faq', {
     url: '/faq',
     templateUrl: 'app/faq/faq.html'
   })
 
-  .state('notification', {
-    url: '/notification',
-    templateUrl: 'app/notification/notification.html',
-    controller: 'NotificationCtrl'
+  .state('app.notifications', {
+    url: '/notifications',
+    templateUrl: 'app/notifications/notifications.html',
+    controller: 'NotificationsCtrl'
   })
 
-  .state('profile', {
+  .state('app.profile', {
     url: '/profile',
     templateUrl: 'app/profile/profile.html',
     controller: 'ProfileCtrl'
   })
 
-  .state('register', {
+  .state('app.register', {
     url: '/register',
     templateUrl: 'app/register/register.html',
     controller: 'RegisterCtrl'
   })
 
-  .state('request', {
+  .state('app.request', {
     url: '/request',
     templateUrl: 'app/request/request.html',
     controller: 'RequestCtrl'
   })
 
-  .state('settings', {
+  .state('app.settings', {
     url: '/settings',
     templateUrl: 'app/settings/settings.html',
     controller: 'SettingsCtrl'
