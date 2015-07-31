@@ -6,6 +6,6 @@ angular.module('helpApp')
 
   $scope.isLoggedIn = function() {
     return false;
-  }
+  };
 
 });
