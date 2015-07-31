@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var app = express();
 var http = require('http').Server(app);
-var io = require('socket.io')(http)
+var io = require('socket.io')(http);
 
 // running some basic Express middleware
 app.use(logger('dev'));
