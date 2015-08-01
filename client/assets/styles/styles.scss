@@ -7,12 +7,14 @@ nav {
 #navLogo {
   margin-left: 0.5em;
   display: inline-block;
-  padding-top: 0.2em
+  padding-top: 0.2em;
+  
 }
 
 .navIcons {
   display: inline-block;
   float: right;
+  height: inherit;
   .navIcon {
     //margin-right: 1em;
     padding-left: 0.5em;
@@ -21,14 +23,35 @@ nav {
 }
 
 .navIcon {
+  padding-top: 0.2em;
   &:hover {
-    color: white;
+    padding-bottom: 0.3em;
+    background-color: white;
+    cursor: pointer;
+  }
+}
+
+.navButton {
+  position: relative;
+  margin-top: -0.8em;
+  padding-top: 0;
+  padding-bottom: 0;
+  &:hover {
+    background-color: white;
+    //border-bottom: 1px solid gray;
     cursor: pointer;
   }
 }
 
 .menuText {
-  font-size: 2em
+  font-size: 2em;
+  color: #333;
+}
+
+.btn-link {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 a {
