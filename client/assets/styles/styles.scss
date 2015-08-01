@@ -35,8 +35,67 @@ a {
   cursor: pointer;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 input {
   &:focus {
     outline: none;
   }
+}
+
+#chatForm {
+  position: fixed;
+  bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+#chatMessage {
+  position: relative;
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+
+#chatSurface {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#chatList {
+  position: absolute;
+  padding: 0 3em 0 3em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  width: 100vw;
+}
+
+.chatMessageDisplay {
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.chatLeft {
+  display: inline-block;
+  background-color: lightblue;
+  text-align: left;
+  max-width: 20em;
+  float: left;
+  border-radius: 0px 20px 20px 20px;
+  word-wrap: break-word;
+}
+
+.chatRight {
+  display: inline-block;
+  background-color: orange;
+  text-align: left;
+  max-width: 20em;
+  float: right;
+  border-radius: 20px 20px 0px 20px;
+  word-wrap: break-word;
 }

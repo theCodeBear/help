@@ -1,1 +1,11 @@
-chat
+<div scroll-bottom='messages' id='chatSurface'>
+  <ul id='chatList'>
+    <li class='chatMessageDisplay' ng-class-odd="'chatLeft col-xs-4 row'" ng-class-even="'chatRight col-xs-4 col-xs-offset-8'" ng-repeat='message in messages track by $index'>
+      {{message}}
+    </li>
+  </ul>
+</div>
+
+<form send-message id='chatForm' name='chatForm' class='col-xs-12' ng-submit=''>
+  <input type='text' id='chatMessage' class='col-xs-12' ng-model='chat.message' placeholder='Message...' autofocus>
+</form>
