@@ -34,4 +34,23 @@ http.listen(3000, function() {
   console.log('Serving on port %s', port);
 });
 
+
+// socket.io
+io.on('connection', function(socket) {
+
+  socket.broadcast.emit('user connected', 'someone else connected');
+  socket.emit('user connected', 'you connected');
+  console.log('user connected');
+
+  socket.on('send chat', function(message) {
+    socket.broadcast.emit('receive chat', message);
+  });
+
+  socket.on('disconnect', function() {
+    console.log('user disconnected');
+  });
+
+});
+
+
 module.exports = app;

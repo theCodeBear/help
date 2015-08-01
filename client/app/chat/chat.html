@@ -1,5 +1,5 @@
 <div scroll-bottom='messages' id='chatSurface'>
-  <ul id='chatList'>
+  <ul chat-box id='chatList'>
     <li class='chatMessageDisplay' ng-class-odd="'chatLeft col-xs-4 row'" ng-class-even="'chatRight col-xs-4 col-xs-offset-8'" ng-repeat='message in messages track by $index'>
       {{message}}
     </li>
