@@ -3,17 +3,17 @@
   <i id='navLogo' class="fa fa-code fa-2x" ui-sref='app.landing'></i>
   <div class='navIcons' >
     <!-- notifications -->
-    <i class="navIcon fa fa-bell fa-2x" data-toggle='tooltip' data-placement='bottom' title='Notifications' ui-sref='app.notifications' ng-if='loggedIn'></i>
+    <i class="navIcon fa fa-bell fa-2x" data-toggle='tooltip' data-placement='bottom' title='Notifications' ui-sref='app.notifications' ng-if='isLoggedIn()'></i>
     <!-- teach -->
     <!-- <span class="navIcon" ui-sref='app.teach.history' ng-if='loggedIn'><span class='menuText'>Teach</span></span> -->
-    <div class="btn-group" ng-if='loggedIn'>
+    <div class="btn-group" ng-if='isLoggedIn()'>
       <button type="button" class="btn btn-link dropdown-toggle navButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class='menuText'>
           Teach
           <span class="caret"></span>
         </span>
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pull-right">
         <li><a ui-sref='app.teach.openSessions'>Open Sessions</a></li>
         <li><a ui-sref='app.teach.scheduleClass'>Schedule Class</a></li>
         <li><a ui-sref='app.teach.history'>History</a></li>
@@ -22,14 +22,14 @@
     </div>
     <!-- learn -->
     <!-- <span class="navIcon" ui-sref='app.learn.history' ng-if='loggedIn'><span class='menuText'>Learn</span></span> -->
-    <div class="btn-group" ng-if='loggedIn'>
+    <div class="btn-group" ng-if='isLoggedIn()'>
       <button type="button" class="btn btn-link dropdown-toggle navButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class='menuText'>
           Learn
           <span class="caret"></span>
         </span>
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pull-right">
         <li><a ui-sref='app.learn.makeRequest'>Request Help</a></li>
         <li><a ui-sref='app.learn.openSessions'>Open Sessions</a></li>
         <li><a ui-sref='app.learn.unanswered'>Unanswered</a></li>
@@ -37,10 +37,26 @@
         <li><a ui-sref='app.learn.searchClasses'>Search Classes</a></li>
       </ul>
     </div>
-    <!-- Account -->
-    <i id='accountButton' class="navIcon fa fa-cog fa-2x toggle-nav" ui-sref='app.account' ng-if='loggedIn'></i>
+    <!-- Menu -->
+    <div class="btn-group" ng-if='isLoggedIn()'>
+      <i id='accountButton' class="navIcon fa fa-cog fa-2x dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-if='isLoggedIn()'></i>
+      <!-- <button type="button" class="btn btn-link dropdown-toggle navButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class='menuText'>
+          Learn
+          <span class="caret"></span>
+        </span>
+      </button> -->
+      <ul class="dropdown-menu pull-right">
+        <li><a ui-sref='app.account'>Account</a></li>
+        <li><a ui-sref='app.settings'>Settings</a></li>
+        <li><a ui-sref='app.faq'>About Us</a></li>
+        <li><a ui-sref='app.contact'>Contact Us</a></li>
+        <li><a ui-sref='app.siteStats'>Site Stats</a></li>
+        <li><a user-logout >Logout</a></li>
+      </ul>
+    </div>
     <!-- login -->
-    <form user-login id='loginForm' name='loginForm' ng-submit='' ng-if='!loggedIn'>
+    <form user-login id='loginForm' name='loginForm' ng-submit='' ng-if='!isLoggedIn()'>
       <input type='email' class='form-control' ng-model='login.email' placeholder='Email' required>
       <input type='password' class='form-control' ng-model='login.password' placeholder='Password' required>
       <button type='submit' class='btn btn-link navButton menuText'>Login</button>

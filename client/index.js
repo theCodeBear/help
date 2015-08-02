@@ -2,6 +2,18 @@
 
 angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
 
+
+.run(function($rootScope, $auth) {
+
+  $rootScope.isLoggedIn = function() {
+    return $auth.isAuthenticated();
+  };
+
+
+})
+
+
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -19,6 +31,7 @@ angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
     templateUrl: 'app/landing/landing.html'
   })
 
+// will get rid of this route
   .state('app.users', {
     url: '/users',
     templateUrl: 'app/users/users.html',
@@ -28,19 +41,28 @@ angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
   .state('app.account', {
     url: '/account',
     templateUrl: 'app/account/account.html',
-    controller: 'AccountCtrl'
+    controller: 'AccountCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.chat', {
     url: '/chat',
     templateUrl: 'app/chat/chat.html',
-    controller: 'ChatCtrl'
+    controller: 'ChatCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.class', {
     url: '/class',
     templateUrl: 'app/class/class.html',
-    controller: 'ClassCtrl'
+    controller: 'ClassCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.contact', {
@@ -57,13 +79,19 @@ angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
   .state('app.notifications', {
     url: '/notifications',
     templateUrl: 'app/notifications/notifications.html',
-    controller: 'NotificationsCtrl'
+    controller: 'NotificationsCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.profile', {
     url: '/profile',
     templateUrl: 'app/profile/profile.html',
-    controller: 'ProfileCtrl'
+    controller: 'ProfileCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.register', {
@@ -75,13 +103,25 @@ angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
   .state('app.request', {
     url: '/request',
     templateUrl: 'app/request/request.html',
-    controller: 'RequestCtrl'
+    controller: 'RequestCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.settings', {
     url: '/settings',
     templateUrl: 'app/settings/settings.html',
-    controller: 'SettingsCtrl'
+    controller: 'SettingsCtrl',
+    data: {
+      authenticate: true
+    }
+  })
+
+  .state('app.siteStats', {
+    url: '/stats',
+    templateUrl: 'app/siteStats/siteStats.html',
+    controller: 'SiteStatsCtrl'
   });
 
 });

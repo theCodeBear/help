@@ -34,4 +34,18 @@ angular.module('helpApp')
     }
   };
 
+})
+
+
+.directive('userLogout', function($auth, $state, User) {
+
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+      elem.bind('click', function() {
+        User.logout();
+      });
+    }
+  };
+
 });
