@@ -34,6 +34,9 @@ angular.module('helpApp')
         if (scope.signup.password === scope.signup.password2) {
           $auth.signup({email: scope.signup.email, password: scope.signup.password}).then(function(response) {
             console.log('signup response', response);
+            scope.signup.email = '';
+            scope.signup.password = '';
+            scope.signup.password2 = '';
             $window.localStorage.setItem('user', JSON.stringify(response.data.user));
           });
         }
