@@ -12,6 +12,7 @@ angular.module('helpApp')
         if (!$auth.isAuthenticated()) {
           User.login(scope.login).then(function(response) {
             $window.localStorage.setItem('user', JSON.stringify(response.data.user));
+            User.store(response.data.user);
             scope.login.email = '';
             scope.login.password = '';
             $state.go('app.profile');
@@ -24,7 +25,7 @@ angular.module('helpApp')
 })
 
 
-.directive('userSignup', function($auth, $window) {
+.directive('userSignup', function($auth, $window, User) {
 
   return {
     restrict: 'A',
@@ -38,6 +39,7 @@ angular.module('helpApp')
             scope.signup.password = '';
             scope.signup.password2 = '';
             $window.localStorage.setItem('user', JSON.stringify(response.data.user));
+            User.store(response.data.user);
           });
         }
       });

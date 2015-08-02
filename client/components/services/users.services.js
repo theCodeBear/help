@@ -4,9 +4,13 @@ angular.module('helpApp')
 
 .factory('User', function($http, $q, $window, $auth, $state) {
 
+  var _user = {};
+
   var service = {
     login: login,
-    logout: logout
+    logout: logout,
+    store: store,
+    get: get
   };
 
   return service;
@@ -20,6 +24,14 @@ angular.module('helpApp')
     $auth.logout();
     $window.localStorage.removeItem('user');
     $state.go('app.landing');
+  }
+
+  function store(user) {
+    _user = user;
+  }
+
+  function get() {
+    return _user;
   }
 
 
