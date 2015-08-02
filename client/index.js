@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helpApp', ['ui.router'])
+angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

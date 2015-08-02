@@ -6,6 +6,7 @@
     "module": false,
     "console": false,
     "document": false,
-    "__dirname": false
+    "__dirname": false,
+    "process": false
   }
 }

@@ -4,6 +4,6 @@ angular.module('helpApp')
 
 .controller('NavCtrl', function($scope) {
 
-  $scope.loggedIn = true;
+  $scope.loggedIn = false;
 
 });

@@ -7,8 +7,10 @@ nav {
 #navLogo {
   margin-left: 0.5em;
   display: inline-block;
-  padding-top: 0.2em;
-  
+  padding-top: 0.4em;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .navIcons {
@@ -37,7 +39,7 @@ nav {
   padding-top: 0;
   padding-bottom: 0;
   &:hover {
-    background-color: white;
+    color: white;
     //border-bottom: 1px solid gray;
     cursor: pointer;
   }
@@ -54,6 +56,21 @@ nav {
   }
 }
 
+#loginForm {
+  margin-top: 0.5em;
+
+  input {
+    display: inline;
+    width: initial;
+  }
+  button {
+    margin-top: -0.1em;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 a {
   cursor: pointer;
 }
@@ -63,9 +80,26 @@ ul {
   padding: 0;
 }
 
+button {
+  &:focus {
+    outline: none !important;
+  }
+}
+
 input {
   &:focus {
-    outline: none;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    box-shadow: none;
+  }
+}
+
+.form-control {
+  &:focus, &:active {
+    outline: none !important;
+    -webkit-appearance: none;
+    box-shadow: none;
+    border-color: initial;
   }
 }
 

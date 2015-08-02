@@ -37,10 +37,15 @@
         <li><a ui-sref='app.learn.searchClasses'>Search Classes</a></li>
       </ul>
     </div>
-    <!-- Side Menu -->
-    <i id='sidemenu' class="navIcon fa fa-cog fa-2x toggle-nav" data-toggle='tooltip' data-placement='bottom' title='Menu' ui-sref='app.account' ng-if='loggedIn'></i>
+    <!-- Account -->
+    <i id='accountButton' class="navIcon fa fa-cog fa-2x toggle-nav" ui-sref='app.account' ng-if='loggedIn'></i>
     <!-- login -->
-    <i class="navIcon fa fa-sign-in fa-2x" ng-if='!loggedIn'></i>
+    <form user-login id='loginForm' name='loginForm' ng-submit='' ng-if='!loggedIn'>
+      <input type='email' class='form-control' ng-model='login.email' placeholder='Email' required>
+      <input type='password' class='form-control' ng-model='login.password' placeholder='Password' required>
+      <button type='submit' class='btn btn-link navButton menuText'>Login</button>
+    </form>
+    <!-- <i class="navIcon fa fa-sign-in fa-2x" ng-if='!loggedIn'></i> -->
   </div>
 </nav>
 
