@@ -7,4 +7,5 @@ module.exports = function(app) {
   app.post('/users', require('./../routes/user/create'));
 
   app.post('/auth/signup', require('./../routes/auth/signup'));
+  app.post('/auth/login', require('./../routes/auth/login'));
 };

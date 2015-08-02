@@ -2,14 +2,21 @@
 
 angular.module('helpApp')
 
-.directive('userLogin', function($state) {
+.directive('userLogin', function($state, $auth, $window, User) {
 
   return {
     restrict: 'A',
     link: function(scope, elem, attrs) {
       elem.on('submit', function() {
         // need to do jwt login auth stuff, then route to inside of app
-        console.log(scope.login);
+        if (!$auth.isAuthenticated()) {
+          User.login(scope.login).then(function(response) {
+            $window.localStorage.setItem('user', JSON.stringify(response.data.user));
+            scope.login.email = '';
+            scope.login.password = '';
+            $state.go('app.profile');
+          });
+        }
       });
     }
   };

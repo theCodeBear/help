@@ -5,12 +5,16 @@ angular.module('helpApp')
 .factory('User', function($http, $q, $window, $auth, $state) {
 
   var service = {
+    login: login,
     logout: logout
   };
 
   return service;
 
-
+  // returns a promise with user info and token
+  function login(creds) {
+    return $auth.login(creds);
+  }
 
   function logout() {
     $auth.logout();

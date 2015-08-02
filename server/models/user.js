@@ -25,11 +25,20 @@ var userSchema = new mongoose.Schema({
 });
 
 userSchema.statics.register = function(payload, cb) {
-  User.findOne({emal: payload.email}, function(err, user) {
+  User.findOne({email: payload.email}, function(err, user) {
     if (user) return cb(true);
     var newUser = new User(payload);
     newUser.password = bcrypt.hashSync(payload.password, 8);
     newUser.save(cb(null, newUser));
+  });
+};
+
+userSchema.statics.login = function(creds, cb) {
+  User.findOne({email: creds.email}, function(err, user) {
+    if (!user) return cb(true);
+    var passwordGood = bcrypt.compareSync(creds.password, user.password);
+    if (!passwordGood) return cb(true);
+    cb(null, user);
   });
 };
 
