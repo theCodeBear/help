@@ -3,11 +3,16 @@
 angular.module('helpApp', ['ui.router', 'satellizer', 'angular-jwt'])
 
 
-.run(function($rootScope, $state, $auth, $window, jwtHelper) {
+.run(function($rootScope, $state, $auth, $window, jwtHelper, User) {
 
   $rootScope.isLoggedIn = function() {
     return $auth.isAuthenticated();
   };
+
+  // on website load, if user is logged in, store user data in user service
+  if ($auth.isAuthenticated()) {
+    User.store(JSON.parse($window.localStorage.getItem('user')));
+  }
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
     // if trying to go to landing page but logged in go to profile instead, LATER ADD IN HERE REGISTRATION PAGE

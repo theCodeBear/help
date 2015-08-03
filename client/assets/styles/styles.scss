@@ -156,3 +156,7 @@ input {
   border-radius: 20px 20px 0px 20px;
   word-wrap: break-word;
 }
+
+textarea.no-resize {
+  resize: none;
+}

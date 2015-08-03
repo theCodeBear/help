@@ -5,13 +5,13 @@
 
 
 <div class='col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4'>
-  <form user-signup id='signupForm' name='signupForm' ng-submit=''>
+  <form user-signup id='signupForm' name='signupForm' ng-submit='' novalidate>
     <div class='form-group'>
-      <input type='email' name='email' class='form-control' ng-model='signup.email' placeholder='Email' required>
-      <input type='password' name='password' class='form-control' ng-model='signup.password' placeholder='Password' required>
-      <input type='password' name='password2' class='form-control' ng-model='signup.password2' placeholder='Confirm Password' required>
+      <input type='email' name='email' class='form-control' ng-model='signup.email' placeholder='Email'>
+      <input type='password' name='password' class='form-control' ng-model='signup.password' placeholder='Password'>
+      <input type='password' name='password2' class='form-control' ng-model='signup.password2' placeholder='Confirm Password'>
     </div>
-    <button type='submit' class='btn btn-primary form-control'>Sign Up</button>
+    <button type='submit' class='btn btn-primary form-control' ng-disabled='signupForm.$invalid'>Sign Up</button>
   </form>
 </div>
 

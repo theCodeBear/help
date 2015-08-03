@@ -5,7 +5,7 @@ var HelpSessions;
 
 var helpSessionsSchema = new mongoose.Schema({
   parent: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  helpSessions: [{ type: mongoose.Schema.ObjectId, ref: 'HelpSession' }]
+  sessions: [{ type: mongoose.Schema.ObjectId, ref: 'HelpSession' }]
 });
 
 HelpSessions = mongoose.model('HelpSessions', helpSessionsSchema);

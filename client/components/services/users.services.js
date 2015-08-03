@@ -10,7 +10,10 @@ angular.module('helpApp')
     login: login,
     logout: logout,
     store: store,
-    get: get
+    updateLocalStorageUser: updateLocalStorageUser,
+    get: get,
+    getId: getId,
+    registerAsStudent: registerAsStudent
   };
 
   return service;
@@ -30,8 +33,20 @@ angular.module('helpApp')
     _user = user;
   }
 
+  function updateLocalStorageUser(user) {
+    $window.localStorage.setItem('user', JSON.stringify(user));
+  }
+
   function get() {
     return _user;
+  }
+
+  function getId() {
+    return _user._id;
+  }
+
+  function registerAsStudent(payload) {
+    return $http.post('/users/student', payload);
   }
 
 

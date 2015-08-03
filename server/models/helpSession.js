@@ -13,5 +13,6 @@ var helpSessionSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now, required: true }
 });
 
+
 HelpSession = mongoose.model('HelpSession', helpSessionSchema);
 module.exports = HelpSession;
